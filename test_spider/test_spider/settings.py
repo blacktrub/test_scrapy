@@ -21,6 +21,18 @@ NEWSPIDER_MODULE = 'test_spider.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+FEED_EXPORTERS = {
+    'csv': 'test_spider.my_csv.MyProjectCsvItemExporter',
+}
+
+FIELDS_TO_EXPORT = [
+    'name',
+    'address',
+    'phone'
+]
+
+CSV_DELIMITER = ";"
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
